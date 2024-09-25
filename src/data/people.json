@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Mathias",
+        "age": 23,
+        "city": "Trondheim",
+        "photo": "https://www.variant.no/_next/image?url=https%3A%2F%2Fchewiesald2ijhpvmb34c.blob.core.windows.net%2Femployees%2F65b75d1970704c00390db60c.png&w=640&q=75",
+        "movie": "Die Hard",
+        "music": "God Jul av Tore Sagen",
+        "worstGift": "Ris på rompa (etter at alle pakkene er pakket opp)"
+    },
+    {
+        "name": "Ida",
+        "age": 26,
+        "city": "Trondheim",
+        "photo": "https://www.variant.no/_next/image?url=https%3A%2F%2Fchewiesald2ijhpvmb34c.blob.core.windows.net%2Femployees%2F65b75ce970704c00310db5c6.png&w=640&q=75",
+        "movie": "Die Hard",
+        "music": "Et Juleevangelium av Klovner i kamp",
+        "worstGift": "Kull"
+    },
+    {
+        "name": "Henrik",
+        "age": 27,
+        "city": "Oslo",
+        "photo": "https://www.variant.no/_next/image?url=https%3A%2F%2Fchewiesald2ijhpvmb34c.blob.core.windows.net%2Femployees%2F6540c4bb71746900351c59e2.png&w=640&q=75",
+        "movie": "Die Hard",
+        "music": "Her kommer vinteren av Jokke og valentinerne",
+        "worstGift": "Svidd kaffe"
+    }
+]

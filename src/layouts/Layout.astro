@@ -12,7 +12,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -22,29 +22,50 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+	--accent: 223, 36, 29; /* Christmas red */
+	--accent-light: 173, 239, 209; /* Light green (honeydew tone) */
+	--accent-dark: 0, 62, 31; /* Dark green */
+	--accent-gradient: linear-gradient(
+		45deg,
+		rgb(var(--accent)),
+		rgb(var(--accent-light)) 30%,
+		white 60%
+	); /* Christmas color gradient: red to light green to white */
+}
+html {
+	font-family: system-ui, sans-serif;
+	background: #003e1f; /* Dark green (British racing green) for a Christmasy background */
+	color: #d5f2e3; /* Soft honeydew color for text for readability against dark background */
+}
+
+code {
+	font-family:
+		Menlo,
+		Monaco,
+		Lucida Console,
+		Liberation Mono,
+		DejaVu Sans Mono,
+		Bitstream Vera Sans Mono,
+		Courier New,
+		monospace;
+	background-color: rgba(var(--accent-light), 0.1); /* Subtle festive background for code */
+	color: rgb(var(--accent)); /* Red code color for a festive touch */
+	border-radius: 4px;
+	padding: 0.2em 0.4em;
+}
+
+/* Additional global styles for Christmas cheer */
+h1, h2, h3, h4, h5, h6 {
+	color: rgb(var(--accent)); /* Titles in Christmas red */
+}
+
+a {
+	color: rgb(var(--accent-light)); /* Links in a light festive green */
+	text-decoration: none;
+}
+
+a:hover {
+	color: white; /* On hover, links turn white for contrast */
+	text-decoration: underline;
+}
 </style>

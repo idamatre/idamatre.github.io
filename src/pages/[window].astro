@@ -2,26 +2,65 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import type { SignatureKind } from 'typescript';
+import people from '../data/people.json';
+import { number, set } from 'astro:schema';
+import Snowfall from 'react-snowfall'
+
+const {window} = Astro.params;
+const windowDate = Number(window);
+const todaysVariant = people[windowDate - 1];
+const today = new Date("2024-12-05T01:30:00.000-05:00");
+const isOpened = windowDate <= today.getDate() && today.getMonth() === 11;
 
 
 ---
 
 <Layout title="Ida sin kule nettside :D">
 	<main>
-		<h1>Luke 1</h1>
-		
+		<Snowfall
+  color="white"
+  snowflakeCount={200}
+  client:load
+  style={{
+    position: 'fixed',
+    width: '100vw',
+    height: '100vh',
+  }}
+  
+/>
+		<div>
+			<h1>Luke {window}</h1>
+			{isOpened ? (
+				<p>Denne luken er allerede åpnet!</p>
+			) : (
+				<p>Denne luken er ikke åpnet enda!</p>
+			)}
+			<p>Dagens variant er: {todaysVariant.name}</p>
+			<img src={todaysVariant.photo} width="300px"/>
+			<ul>
+				<li>Favoritt julefilm: {todaysVariant.movie}</li>
+				<li>I desember hører jeg på: {todaysVariant.music}</li>
+				<li>Og det jeg ønsker meg under treet er: {todaysVariant.worstGift}</li>
+			</ul>
+		</div>
+	
 	</main>
+
+
 </Layout>
 
 <style>
 	main {
 		margin: auto;
+		display: flex;
 		padding: 1rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
+		justify-content: center;
+		align-items: center;
 	}
 	.astro-a {
 		position: absolute;
